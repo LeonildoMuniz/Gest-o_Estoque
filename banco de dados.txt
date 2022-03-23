@@ -41,3 +41,11 @@ CREATE TABLE [dbo].[Usuario] (
     [data_admissao] DATE        NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+
+Para adicionar a chave estrangeira na criação:
+CONSTRAINT fk_PesCarro FOREIGN KEY (ID_Pessoa) REFERENCES Pessoa (ID_Pessoa)
+
+ou caso tabela seja existente:
+ALTER TABLE Carro
+ADD CONSTRAINT fk_PesCarro FOREIGN KEY (ID_Pessoa) REFERENCES Pessoa (ID_Pessoa)
