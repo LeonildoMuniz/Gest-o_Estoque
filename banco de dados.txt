@@ -1,0 +1,43 @@
+CREATE TABLE [dbo].[Movimentacao] (
+    [Id]          INT             IDENTITY (1, 1) NOT NULL,
+    [id_produto]  INT             NULL,
+    [id_tipo_mov] INT             NULL,
+    [data]        DATE            NULL,
+    [quantidade]  INT             NULL,
+    [unitario]    DECIMAL (18, 2) NULL,
+    [total]       DECIMAL (18, 2) NULL,
+    [login]       NCHAR (100)     NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Produto] (
+    [Id]   INT         IDENTITY (1, 1) NOT NULL,
+    [nome] NCHAR (150) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Saldo] (
+    [Id]         INT             IDENTITY (1, 1) NOT NULL,
+    [id_produto] INT             NULL,
+    [quantidade] INT             NULL,
+    [unitario]   DECIMAL (18, 2) NULL,
+    [total]      DECIMAL (18, 2) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[TP_Movimento] (
+    [Id]     INT         IDENTITY (1, 1) NOT NULL,
+    [nome]   NCHAR (150) NULL,
+    [tp_mov] CHAR (1)    NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[Usuario] (
+    [Id]            INT         IDENTITY (1, 1) NOT NULL,
+    [nome]          NCHAR (150) NULL,
+    [login]         NCHAR (100) NULL,
+    [senha]         NCHAR (100) NULL,
+    [cargo]         NCHAR (100) NULL,
+    [data_admissao] DATE        NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
